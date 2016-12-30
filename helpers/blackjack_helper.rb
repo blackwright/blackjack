@@ -55,6 +55,6 @@ module BlackjackHelper
   end
 
   def low_funds_message
-    "You don't have enough funds to make that bet."
+    "Sorry, you don't have enough funds to make that bet."
   end
 end
