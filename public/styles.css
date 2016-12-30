@@ -253,6 +253,10 @@ button {
   }
 }
 
+@-ms-viewport {
+  width: device-width;
+}
+
 @media screen and (max-width: 600px) {
 
   .btn-container {
