@@ -1,0 +1,20 @@
+<div class="tall aqua dealer-container">
+  <h3 class="white-text">Dealer</h3>
+  <hr>
+
+  <div class="margin-top">
+    <%= cardify(@dealer.cards.first) %>
+    <%= erb :"cards/_card_back" %>
+  </div>
+
+  <form class="btn-container">
+    <button type="submit" class="btn-big white-text pull-left navy" formaction="/hit" formmethod="post">
+      Hit
+    </button>
+    <button type="submit" class="btn-big white-text pull-right navy" formaction="/stand" formmethod="get">
+      Stand
+    </button>
+  </form>
+</div>
+
+<%= erb :"shared/_player_hand" %>

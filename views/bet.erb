@@ -1,0 +1,15 @@
+<% if @message %>
+  <div class="short">
+    <%= @message %>
+  </div>
+<% end %>
+
+<div class="tall aqua">
+  <%= erb :"shared/_bank" %>
+  <h3 class="white-text">How much would you like to bet?</h3>
+
+  <form action="/bet" method="post" class="margin-top">
+    <input type="number" name="bet" min="0"><br>
+    <button type="submit" class="btn-wide papaya white-text margin-top">Bet</button>
+  </form>
+</div>

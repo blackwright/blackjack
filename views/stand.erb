@@ -1,0 +1,18 @@
+<%= erb :"_game_over" %>
+
+<div class="tall aqua">
+  <h3 class="white-text">Dealer</h3>
+  <hr>
+
+  <div class="margin-top">
+    <% @dealer.cards.each do |card| %>
+      <%= cardify(card) %>
+    <% end %>
+  </div>
+
+  <div class="margin-top">
+    <p class="white-text">Value: <%= @dealer.score %></p>
+  </div>
+</div>
+
+<%= erb :"shared/_player_hand" %>

@@ -1,0 +1,14 @@
+<div class="tall papaya">
+  <h3 class="white-text">Player</h3>
+  <hr>
+
+  <div class="margin-top">
+    <% @player.cards.each do |card| %>
+      <%= cardify(card) %>
+    <% end %>
+  </div>
+
+  <div class="margin-top">
+    <p class="white-text">Value: <%= @player.score %></p>
+  </div>
+</div>

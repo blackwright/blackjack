@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sinatra Blackjack</title>
+    <%= erb :_links %>
+    <meta charset="utf-8">
+  </head>
+  <body class="navy">
+    <%= erb :"shared/_header" %>
+    <main class="center-text">
+    <%= yield %>
+    </main>
+    <%= erb :"shared/_footer" %>
+  </body>
+</html>
