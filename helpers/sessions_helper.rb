@@ -6,6 +6,7 @@ module SessionsHelper
     session[:player] = state[:player].cards unless state[:player].nil?
     session[:dealer] = state[:dealer].cards unless state[:dealer].nil?
     session[:bet] = state[:bet] unless state[:bet].nil?
+    session[:done] = state[:done] unless state[:done].nil?
   end
 
   def load_deck
@@ -26,5 +27,9 @@ module SessionsHelper
 
   def load_bet
     session[:bet]
+  end
+
+  def hand_finished
+    session[:done]
   end
 end

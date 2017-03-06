@@ -5,11 +5,18 @@
 <% end %>
 
 <div class="tall aqua">
-  <%= erb :"shared/_bank" %>
-  <h3 class="white-text">How much would you like to bet?</h3>
+  <%= erb :"shared/_bank", locals: { bank: @bank } %>
 
-  <form action="/bet" method="post" class="margin-top">
-    <input type="number" name="bet" min="0"><br>
-    <button type="submit" class="btn-wide papaya white-text margin-top">Bet</button>
-  </form>
+  <% if @bankrupt %>
+    <h3 class="white-text">Your luck will turn around. Play again.</h3>
+    <form method="get">
+      <button type="submit" formaction="/new" class="btn-wide white-text papaya margin-top">New Game</button>
+    </form>
+  <% else %>
+    <h3 class="white-text">How much would you like to bet?</h3>
+    <form action="/bet" method="post" class="margin-top">
+      <input type="number" name="bet" min="0"><br>
+      <button type="submit" class="btn-wide papaya white-text margin-top">Bet</button>
+    </form>
+  <% end %>
 </div>

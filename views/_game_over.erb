@@ -1,7 +1,7 @@
-<div class="tall blue">
+<div class="tall navy">
   <h2 class="white-text"><%= @message %></h2>
 
-  <%= erb :"shared/_bank" %>
+  <%= erb :"shared/_bank", locals: { bank: bank } %>
 
   <form method="get">
     <button type="submit" formaction="/" class="btn-wide white-text papaya">Deal Again</button>
