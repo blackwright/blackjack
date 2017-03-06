@@ -27,9 +27,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pry
-  sinatra
-  thin
+  pry (~> 0.10.4)
+  sinatra (~> 1.4.7)
+  thin (~> 1.7.0)
 
 BUNDLED WITH
    1.13.2
