@@ -60,6 +60,7 @@ get '/blackjack' do
 end
 
 post '/hit' do
+  redirect to('/stand') if hand_finished
   deck = Deck.new(load_deck)
   bank = Bank.new(load_bank)
   dealer = Hand.new(load_dealer)
@@ -87,7 +88,7 @@ get '/stand' do
   unless hand_finished
     if outcome == :victory
       @bank.transfer(bet * 2)
-    elsif @outcome == :push
+    elsif outcome == :push
       @bank.transfer(bet)
     end
   end
