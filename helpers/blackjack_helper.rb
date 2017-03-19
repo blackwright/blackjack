@@ -4,13 +4,19 @@ module BlackjackHelper
     player.cards << deck.deal_card
   end
 
+  def render_card(template, suit, card_class)
+    erb(template, :layout => false)
+      .gsub("{{ suit }}", "&#{suit};")
+      .gsub("{{ card class }}", card_class)
+  end
+
   def cardify(card)
     rank = card[0]
     suit = card[1]
     if ["diams", "hearts"].include?(suit)
-      (erb :"cards/_#{rank}").gsub("SUIT", "&#{suit};").gsub("front", "front red")
+      render_card(:"cards/_#{rank}", suit, "front red")
     else
-      (erb :"cards/_#{rank}").gsub("SUIT", "&#{suit};")
+      render_card(:"cards/_#{rank}", suit, "front")
     end
   end
 
